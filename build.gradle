@@ -8,20 +8,29 @@ group = 'me.yoon2fy'
 version = '1.0'
 sourceCompatibility = '17'
 
-
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    // Web
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation 'org.springframework.boot:spring-boot-starter-web'
 
-    // 스프링 데이터 JPA
-    implementation 'org.springframework.boot::spring-boot-starter-data-jpa'
-    runtimeOnly 'com.h2database:h2' // 인메모리 데이터베이스
-    compileOnly 'org.projectlombok::lombok'
+    // JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+
+    // Dev tools (자동 리로드)
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
