@@ -1,3 +1,4 @@
+// 글 목록 조회용 API 구현
 package me.yoon2fy.springbootdeveloper.dto;
 
 import lombok.Getter;
