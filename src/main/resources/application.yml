@@ -1,17 +1,22 @@
 spring:
-  java:
-    # 전송 쿼리 확인
-    show-sql: true
+  jpa:
+    show-sql: true                     # 실행되는 SQL 쿼리 콘솔에 출력
     properties:
       hibernate:
-        format_sql:true
+        format_sql: true               # SQL 포맷팅
+    defer-datasource-initialization: true  # 테이블 생성 후 data.sql 실행
 
-    # 테이블 생성 후에 data.sql 실행
-    defer-datasource-initialization: true
+  datasource:
+    url: jdbc:h2:mem:testdb            # 메모리 DB
+    driver-class-name: org.h2.Driver
+    username: test
+    password: 1234
 
-    datasource:
-      url: jdbc:h3:mem:testdb
+  h2:
+    console:
+      enabled: true                     # H2 콘솔 사용 가능
+      path: /h2-console                 # 콘솔 접속 경로
 
-      h2:
-        console:
-          enabled: true
+# 서버 포트 설정 (필요 시)
+server:
+  port: 8080
