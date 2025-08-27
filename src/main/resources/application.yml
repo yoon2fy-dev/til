@@ -17,6 +17,3 @@ spring:
       enabled: true                     # H2 콘솔 사용 가능
       path: /h2-console                 # 콘솔 접속 경로
 
-# 서버 포트 설정 (필요 시)
-server:
-  port: 8080
